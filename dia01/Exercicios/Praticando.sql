@@ -1,4 +1,5 @@
 -- Databricks notebook source
+-- DBTITLE 1,Exercício 01
 -- 01 Selecione todos os clientes paulistanos
 
 SELECT *
@@ -10,6 +11,7 @@ WHERE descCidade = 'sao paulo'
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Exercício 02
 -- 02 selecione todos os clientes paulista
 
 SELECT *
@@ -19,6 +21,7 @@ WHERE descUF = 'SP'
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Exercício 03
 -- 03 SELECIONE TODOS VENDEDORES CARIOCAS E PAULISTAS
 
 SELECT *
@@ -31,6 +34,7 @@ OR descUF = 'SP'
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Exercício 04
 -- 04 selecione produtos de perfumaria e bebes com altura maior que 5cm
 
 SELECT *
