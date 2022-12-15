@@ -73,3 +73,10 @@ FROM silver_olist.item_pedido
 
 
 
+
+-- COMMAND ----------
+
+SELECT COUNT(*) 
+FROM silver_olist.cliente
+
+WHERE descUF = 'MT'
