@@ -57,13 +57,14 @@ WHERE descCidade IN ('presidente prudente','curitiba')
 -- COMMAND ----------
 
 SELECT
-      AVG(vlPreco) AS avgPreco, --- media da coluna vlPreco (preco médio dos produtos)
+      ROUND(AVG(vlPreco), 2) AS avgPreco, --- media da coluna vlPreco (preco médio dos produtos)
       
-      PERCENTILE(vlPreco, 0.5) AS medianPreco, --- preço mediano
-      
+      ROUND(PERCENTILE(vlPreco, 0.5), 2) AS medianPreco, --- preço mediano
+      --INT numero inteiro
+      --ROUND arrendondar sintaxe: ROUN((funcao),2) - o "2" é o número de casas. 
       
       MAX(vlPreco) AS maxPreco,
-      AVG(vlFrete) AS avgFrete,
+      ROUND(AVG(vlFrete), 2) AS avgFrete,
       MAX(vlFrete) AS vlFrete,
       MIN(vlFrete) AS vlFrete
       
