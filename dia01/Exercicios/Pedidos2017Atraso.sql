@@ -26,3 +26,25 @@ FROM silver_olist.pagamento_pedido
 
 WHERE nrPacelas >= 2
 AND vlPagamento / nrPacelas < 20
+
+-- COMMAND ----------
+
+
+SELECT *,
+
+      vlFrete + vlPreco AS vlTotal,
+      ROUND(vlFrete / (vlFrete + vlPreco),2) AS pctFrete,
+
+      CASE
+        WHEN vlFrete / (vlFrete + vlPreco) <= 0.1 THEN '10%'
+        WHEN vlFrete / (vlFrete + vlPreco) <= 0.25 THEN '10% a 25%'
+        WHEN vlFrete / (vlFrete + vlPreco) <= 0.50 THEN '25% a 50%'
+        ELSE '+50%'
+      END AS descricaoFretePct  
+
+FROM silver_olist.item_pedido
+
+
+WHERE 
+
+
